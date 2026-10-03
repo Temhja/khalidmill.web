@@ -111,7 +111,8 @@ p{margin:0 0 1em}
 .bento{display:grid;gap:12px}
 .bento__photo{position:relative;border-radius:var(--r-l);overflow:hidden;min-height:220px}
 .bento__photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.bento__photo figcaption{position:absolute;inset-inline:16px;bottom:14px;color:#fff;font-weight:600;font-size:1.05rem;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.bento__photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.6))}
+.bento__photo figcaption{z-index:1;position:absolute;inset-inline:16px;bottom:14px;color:#fff;font-weight:600;font-size:1.05rem;text-shadow:0 2px 12px rgba(0,0,0,.5)}
 
 .steps{display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad);scroll-padding-inline:var(--pad);padding-bottom:4px}
 .steps::-webkit-scrollbar{display:none}
@@ -120,6 +121,16 @@ p{margin:0 0 1em}
 .step__i{width:40px;height:40px;padding:9px;border-radius:12px;background:rgba(232,100,27,.14);fill:none;stroke:#F08A4B;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:18px}
 .step h3{color:#fff;margin-bottom:6px}
 .step p{color:#ABA59A;font-size:.94rem;margin:0}
+
+
+/* experience */
+.since{display:flex;align-items:center;gap:14px;margin:4px 0 22px;padding:14px 16px;border-radius:var(--r-l);background:var(--paper);border:1px solid var(--line);max-width:420px}
+.since b{font-size:2.2rem;line-height:1;color:var(--orange-d);font-weight:700}
+.since span{font-size:.92rem;color:#4A4741;line-height:1.6}
+.step--hl{background:var(--orange);border-color:var(--orange)}
+.step--hl b{display:block;font-size:2.4rem;line-height:1;font-weight:700;color:#fff;margin:4px 0 14px}
+.step--hl h3{color:#fff}
+.step--hl p{color:#FFE3D1}
 
 /* ---------- PRODUCTS ---------- */
 .products{padding-block:64px}
@@ -252,8 +263,8 @@ a.row:hover{border-color:#D9D0BF}
   .collage{height:580px;gap:14px}
 
   .process{margin-inline:auto;max-width:1612px;width:calc(100% - 28px);padding-block:96px}
-  .bento{grid-template-columns:1fr 2fr;gap:14px}
-  .bento__photo{min-height:100%}
+  .bento{gap:14px}
+  .bento__photo{min-height:340px}
   .steps{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;margin:0;padding:0;gap:14px}
 
   .products{padding-block:110px}
